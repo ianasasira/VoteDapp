@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Decentralized Voting Application</title>
+    <script src="main.js"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.1.umd.min.js"
+        type="application/javascript"></script>
+	<title>Voting DAPP</title>
+	<style>
+		.main{
+		display: flex;	
+		justify-content: space-around;
+		
+		}
+		button {
+			background-color: #4c82af;
+			color: white;
+			padding: 12px 24px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			display: block;
+			margin: 50px auto 0;
+		}
+
+		button:hover {
+			background-color: #f2f2f2;
+		}
+
+		/* Paragraph styles */
+		p {
+			text-align: center;
+			font-size: 20px;
+			margin-top: 50px;
+		}
+
+
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin-top: 50px;
+		}
+		
+		input[type=text], select {
+			width: 30%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			box-sizing: border-box;
+			border: 2px solid #ccc;
+			border-radius: 4px;
+		}
+		
+        input[type=number], select {
+			width: 30%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			box-sizing: border-box;
+			border: 2px solid #ccc;
+			border-radius: 4px;
+		}
+
+		input[type=submit] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		
+		input[type=submit]:hover {
+			background-color: #f2f2f2;
+			color:black;
+		}
+		
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin-top: 50px;
+			width: 70%;
+		}
+		
+		span {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+/* Style the navigation bar */
+		.navbar {
+			overflow: hidden;
+			background-color: #333;
+			font-family: Arial;
+			flex-direction: row;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		/* Style the links inside the navigation bar */
+		.navbar a {
+			float: left;
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 20px;
+			text-decoration: none;
+		}
+
+		/* Change the color of links on hover */
+		.navbar a:hover {
+			background-color: #f2f2f2;
+			color: black;
+		}
+
+		
+        #myTable {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        }
+
+        #myTable th,
+        #myTable td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+        }
+
+        #myTable th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        }
+
+		.nav-heading{
+			text-decoration: none;
+			display: inline;
+			
+			
+		}
+		.navheading-left{
+			
+		}
+		.main2{
+
+		}
+	</style>
+
+</head>
+<body>
+    <div class = "navbar">
+		
+        <a class="nav-heading">Decentralized Digital Voting application </a> 
+		
+		<div class="navheading-left"><a href="/index.html">Cast</a>
+			<a href="/ListVoters.html">Candidates</a></div>
+		
+    </div>
+
+    
+<div class="main">
+    <div class="main2">
+        <button onclick="connectMetamask()">Login into Metamask Address Account  </button>
+        <p id="metamasknotification"></p>
+    </div>
+
+    <div class="container">
+        <span style="font-family: 'Times New Roman', Times, serif; font-weight: 800; font-size: 30px;">VOTE HERE </span><br><br>
+        <input type = "number" id ="vote" placeholder="Place VoterIndex ">
+        <button onclick="addVote()">Cast Vote</button>
+        <p id="cand"></p>
+        
+        <button onclick="voteStatus()">Voting Time/period left</button>
+        <p id = "status"></p>
+        <p id = "time"></p>
+    </div>
+</div>
+</body>
+</html>
